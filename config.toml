@@ -1,0 +1,11 @@
+[main]
+IBM_METRIC_DEVICE_SECTION_LIST = "volumes,pools,disks,ports,nodes,managed_disks,virtual_disks,cpu_cores,dimm"
+IBM_METRIC_PORT = 8000
+IBM_METRIC_UPDATE_INTERVAL = 10 # Частота чтения файлов
+
+SSH_USER = "your_ssh_user"
+SSH_HOST = "your_ssh_host"
+SSH_PASSWORD = "your_ssh_password"
+REMOTE_DIR = "/remote/path/to/iostats/"
+LOCAL_DIR = "/app/iostats"
+INTERVAL = 60  # Частота скачкий файлов

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ibm_perf_exporter:
+    build: .
+    container_name: ibm_perf_exporter
+    volumes:
+      - iostats-data:/app/iostats
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+volumes:
+  ibm_perf_exporter:
