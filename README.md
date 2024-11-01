@@ -30,22 +30,23 @@ bash
 
 2. Create a `docker-compose.yml` file with the following content:
 
-yaml
-   version: '3.8'
+```
+version: '3.8'
 
-   services:
-     ibm_perf_exporter:
-       build: .
-       container_name: ibm_perf_exporter
-       volumes:
-         - iostats-data:/app/iostats
-       ports:
-         - "8000:8000"
-       restart: unless-stopped
-   
+services:
+ ibm_perf_exporter:
+   build: .
+   container_name: ibm_perf_exporter
    volumes:
-     iostats-data:
-   
+     - iostats-data:/app/iostats
+   ports:
+     - "8000:8000"
+   restart: unless-stopped
+
+volumes:
+ iostats-data:
+ ```
+
 3. Build and start the Docker container using Docker Compose:
 
 bash
@@ -66,11 +67,12 @@ The metrics will be exposed on port 8000, and you can scrape them from your Prom
 
 yaml
 scrape_configs:
+```
   - job_name: 'ibm_perf_exporter'
     metrics_path: '/'
     static_configs:
     - targets: ['localhost:8000']
-
+```
 
 
 ## Contributing
