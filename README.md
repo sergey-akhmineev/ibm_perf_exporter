@@ -53,7 +53,7 @@ bash
 
 4. Verify that the exporter is running and metrics are being served by accessing:
 
-http://localhost:8000/metrics
+http://localhost:8000/
 
 
 ### Configuration
@@ -67,10 +67,11 @@ The metrics will be exposed on port 8000, and you can scrape them from your Prom
 yaml
 scrape_configs:
   - job_name: 'ibm_perf_exporter'
+    metrics_path: '/'
     static_configs:
-      - targets: ['localhost:8000']
+    - targets: ['localhost:8000']
 
-  
+
 
 ## Contributing
 
