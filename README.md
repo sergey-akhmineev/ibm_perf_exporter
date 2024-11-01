@@ -24,10 +24,10 @@ To start the IBM Performance Exporter, follow these steps:
 
 1. Clone this repository to your local machine.
 
-bash
-   git clone https://github.com/yourusername/ibm_perf_exporter.git
-   cd ibm_perf_exporter
-
+```
+git clone https://github.com/yourusername/ibm_perf_exporter.git
+cd ibm_perf_exporter
+```
 2. Create a `docker-compose.yml` file with the following content:
 
 ```
@@ -45,12 +45,13 @@ services:
 
 volumes:
  iostats-data:
- ```
+```
 
 3. Build and start the Docker container using Docker Compose:
 
-bash
-   docker-compose up -d
+```
+docker-compose up -d
+```
 
 4. Verify that the exporter is running and metrics are being served by accessing:
 
